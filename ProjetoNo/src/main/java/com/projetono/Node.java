@@ -1,28 +1,28 @@
 package com.projetono;
 
-public class Node {
-    private String str;
-    private Node nextNode;
+public class Node<T> {
+    private T conteudo;
+    private Node<T> nextNode;
 
     //gerar construct somente para a str pq só terá get/set para o nextNode
-    public Node(String str) {
+    public Node(T conteudo) {
         this.nextNode = null; // garante que a ref pro proximo nó é null
-        this.str = str;
+        this.conteudo = conteudo;
     }
 
-    public String getStr() {
-        return str;
+    public T getconteudo() {
+        return conteudo;
     }
 
-    public void setStr(String str) {
-        this.str = str;
+    public void setconteudo(T conteudo) {
+        this.conteudo = conteudo;
     }
 
-    public Node getNextNode() {
+    public Node<T> getNextNode() {
         return nextNode;
     }
 
-    public void setNextNode(Node nextNode) {
+    public void setNextNode(Node<T> nextNode) {
         this.nextNode = nextNode;
     }
 
@@ -30,7 +30,7 @@ public class Node {
     @Override
     public String toString() {
         return "Node{" +
-                "str='" + str + '\'' +
+                "conteudo='" + conteudo + '\'' +
                 '}';
     }
 }
